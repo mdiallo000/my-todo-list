@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
 
-function Todo({ data }) {
+function Todo({ data, DeleteTodo }) {
   return (
     <div>
       <ListItem>
@@ -16,7 +16,12 @@ function Todo({ data }) {
           <Checkbox tabIndex={-1} />
           <ListItemText>{data.task}</ListItemText>
           <ListItemSecondaryAction>
-            <IconButton aria-label="Delete">
+            <IconButton
+              aria-label="Delete"
+              onClick={() => {
+                DeleteTodo(data.id);
+              }}
+            >
               <Delete />
             </IconButton>
             <IconButton aria-label="Edit">

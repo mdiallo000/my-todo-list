@@ -17,9 +17,10 @@ function TodoApp() {
     }
   };
   // ** This methode will allow us to filter out an item based on its unique id and bring back a new list with the items that are not the id we chose.
-  //   const DeleteTodo = () => {
-  //     const newlist = Mytodolist.filter(item.id);
-  //   };
+  const DeleteTodo = (id) => {
+    const newlist = Mytodolist.filter((item) => item.id !== id);
+    setMytodolist(newlist);
+  };
 
   return (
     <Paper
@@ -31,18 +32,11 @@ function TodoApp() {
       }}
       elevation={0}
     >
-      {/* {Mytodolist.map((item) => {
-          return (
-              <Paper>
-              <li>{item.task}</li>
-              </Paper>
-              );
-            })} */}
       <Grid container justifyContent="center" style={{ marginTop: '1rem' }}>
         <Grid item xs={11} md={8} lg={4}>
           <TodoForm addNewTodo={addNewTodo} />
 
-          <TodoList Mytodolist={Mytodolist} />
+          <TodoList Mytodolist={Mytodolist} DeleteTodo={DeleteTodo} />
         </Grid>
       </Grid>
     </Paper>
