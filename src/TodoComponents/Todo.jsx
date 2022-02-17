@@ -8,12 +8,17 @@ import {
 } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
 
-function Todo({ data, DeleteTodo }) {
+function Todo({ data, DeleteTodo, DeleteAll }) {
   return (
     <div>
       <ListItem>
         <>
-          <Checkbox tabIndex={-1} />
+          <Checkbox
+            tabIndex={-1}
+            onClick={() => {
+              data.completed = true;
+            }}
+          />
           <ListItemText>{data.task}</ListItemText>
           <ListItemSecondaryAction>
             <IconButton
@@ -24,6 +29,8 @@ function Todo({ data, DeleteTodo }) {
             >
               <Delete />
             </IconButton>
+            {/* sfdsdsssssssssss */}
+
             <IconButton aria-label="Edit">
               <Edit />
             </IconButton>
