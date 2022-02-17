@@ -1,10 +1,20 @@
+import { Divider, Paper, List } from '@mui/material';
 import React from 'react';
 import Todo from './Todo';
-function TodoList() {
+function TodoList({ Mytodolist }) {
   return (
-    <div>
-      <Todo />
-    </div>
+    <Paper>
+      <List>
+        {Mytodolist.map((item) => {
+          return (
+            <>
+              <Todo data={item} />
+              <Divider />
+            </>
+          );
+        })}
+      </List>
+    </Paper>
   );
 }
 

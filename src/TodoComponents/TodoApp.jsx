@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-import { Paper } from '@mui/material';
+import { Paper, Grid } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 function TodoApp() {
   const [Mytodolist, setMytodolist] = useState([]);
@@ -17,19 +17,35 @@ function TodoApp() {
     }
   };
   // ** This methode will allow us to filter out an item based on its unique id and bring back a new list with the items that are not the id we chose.
+  //   const DeleteTodo = () => {
+  //     const newlist = Mytodolist.filter(item.id);
+  //   };
 
   return (
-    <div>
-      <TodoForm addNewTodo={addNewTodo} />
-      {Mytodolist.map((item) => {
-        return (
-          <Paper>
-            <li>{item.task}</li>
-          </Paper>
-        );
-      })}
-      <TodoList />
-    </div>
+    <Paper
+      style={{
+        padding: 0,
+        margin: 0,
+        height: '100vh',
+        backgroundColor: '#fafafa',
+      }}
+      elevation={0}
+    >
+      {/* {Mytodolist.map((item) => {
+          return (
+              <Paper>
+              <li>{item.task}</li>
+              </Paper>
+              );
+            })} */}
+      <Grid container justifyContent="center" style={{ marginTop: '1rem' }}>
+        <Grid item xs={11} md={8} lg={4}>
+          <TodoForm addNewTodo={addNewTodo} />
+
+          <TodoList Mytodolist={Mytodolist} />
+        </Grid>
+      </Grid>
+    </Paper>
   );
 }
 
