@@ -40,7 +40,7 @@ function TodoApp() {
         <Grid item xs={11} md={8} lg={4}>
           <TodoForm addNewTodo={addNewTodo} DeleteAll={DeleteAll} />
 
-          <TodoList Mytodolist={Mytodolist} DeleteTodo={DeleteTodo} />
+          <TodoList Mytodolist={Mytodolist} DeleteTodo={DeleteTodo}  DeleteAll={DeleteAll}/>
         </Grid>
       </Grid>
     </Paper>

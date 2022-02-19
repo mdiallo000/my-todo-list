@@ -11,7 +11,7 @@ function TodoForm({ addNewTodo, DeleteAll }) {
   return (
     <div>
       <Paper>
-        <Typography variant="h1">Add a Todo</Typography>
+        <Typography variant="h1">Todo App</Typography>
         <form
           action=""
           onSubmit={(e) => {
@@ -28,10 +28,10 @@ function TodoForm({ addNewTodo, DeleteAll }) {
             margin="normal"
             fullWidth
           />
-          <button>Add A Todo </button>
-          <Button variant="contained" onClick={() => DeleteAll()}>
+          <button style={{ backGroundColor: 'blue' }}>Add A Todo </button>
+          {/* <Button variant="contained" onClick={() => DeleteAll()}>
             Clear All
-          </Button>
+          </Button> */}
         </form>
       </Paper>
     </div>
